@@ -1,4 +1,5 @@
-use library;
+CREATE DATABASE IF NOT EXISTS library;
+USE library;
 DROP TABLE IF EXISTS `library`.`users`;
 CREATE TABLE `library`.`users` (
   `user_id` VARCHAR(45) NOT NULL,

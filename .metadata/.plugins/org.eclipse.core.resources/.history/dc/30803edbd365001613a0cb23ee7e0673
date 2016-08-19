@@ -1,0 +1,11 @@
+INSERT INTO department VALUES ("001","CSE","Computer Science");
+INSERT INTO department VALUES ("002","IT","Information Technology");
+INSERT INTO department VALUES ("003","ECE","Electronics & Communications");
+INSERT INTO department VALUES ("004","EEE","Electrical & Electroics");
+INSERT INTO department VALUES ("005","MECH","Mechanical");
+
+INSERT INTO staff VALUES ('T001','Anand','Kumar','1980-07-04','2000-07-04',null);
+INSERT INTO department VALUES ('002','IT','Information Technology');
+INSERT INTO department VALUES ('003','ECE','Electronics & Communications');
+INSERT INTO department VALUES ('004','EEE','Electrical & Electroics');
+INSERT INTO department VALUES ('005','MECH','Mechanical');

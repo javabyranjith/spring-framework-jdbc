@@ -1,0 +1,5 @@
+INSERT INTO department VALUES ("001","Computer Science");
+INSERT INTO department VALUES ("002","Information Technology");
+INSERT INTO department VALUES ("003","Mathematics");
+INSERT INTO department VALUES ("001","Mathematics");
+INSERT INTO department VALUES ("001","Mathematics");
