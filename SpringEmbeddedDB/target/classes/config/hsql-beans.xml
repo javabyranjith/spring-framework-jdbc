@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- HSQL DB -->
+	<bean id="hsqlDatasource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+		<property name="url" value="jdbc:hsqldb:file:H:/Installed/db/hsqldb-2.3.4/database" />
+		<property name="username" value="ranjith" />
+		<property name="password" value="sekar" />
+	</bean>
+
+	<bean id="userDao" class="jbr.springdb.dao.UserDaoImpl">
+		<property name="dataSource" ref="hsqlDatasource" />
+	</bean>
+
+</beans>
