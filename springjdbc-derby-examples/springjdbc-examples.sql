@@ -1,0 +1,9 @@
+
+
+CREATE TABLE students ( 
+name VARCHAR(30) NOT NULL,
+dob VARCHAR(20) NOT NULL,
+email VARCHAR(30) NOT NULL,
+phone INTEGER,
+course VARCHAR(30) NOT NULL
+);
