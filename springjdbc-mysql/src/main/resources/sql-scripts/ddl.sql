@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS library;
-USE library;
-DROP TABLE IF EXISTS `library`.`users`;
-CREATE TABLE `library`.`users` (
+CREATE DATABASE IF NOT EXISTS spring_jdbc;
+USE spring_jdbc;
+DROP TABLE IF EXISTS `spring_jdbc`.`users`;
+CREATE TABLE `spring_jdbc`.`users` (
   `user_id` VARCHAR(45) NOT NULL,
   `user_type` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NOT NULL,
@@ -10,5 +10,3 @@ CREATE TABLE `library`.`users` (
   `address` VARCHAR(45) NULL,
   `phone` INT NULL,
   PRIMARY KEY (`user_id`));
-
-  

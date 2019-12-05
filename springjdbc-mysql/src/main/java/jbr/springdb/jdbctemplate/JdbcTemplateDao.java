@@ -10,7 +10,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import jbr.springdb.model.User;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class JdbcTemplateDao {
 
   private DataSource datasource;
@@ -22,9 +24,7 @@ public class JdbcTemplateDao {
 
   public List<User> getAllUsers() {
     jdbcTemplate = new JdbcTemplate(datasource);
-
     List<User> results = jdbcTemplate.query("select * from users", new BeanPropertyRowMapper(User.class));
-
     return results;
   }
 
