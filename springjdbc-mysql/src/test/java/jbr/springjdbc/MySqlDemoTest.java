@@ -1,26 +1,28 @@
 package jbr.springjdbc;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import jbr.springdb.dao.NonJdbcTemplateDao;
+import jbr.springdb.model.User;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:config/spring-db-beans.xml" })
 public class MySqlDemoTest {
-  ApplicationContext ctx;
 
-  @Before
-  public void setUp() throws Exception {
-    ctx = new ClassPathXmlApplicationContext("config/spring-db-beans.xml");
-  }
+  @Autowired
+  private NonJdbcTemplateDao dao;
 
   @Test
   public void testNonJdbcTemplate() {
-    NonJdbcTemplateDao dao = (NonJdbcTemplateDao) ctx.getBean("nonJdbcTemplateDao");
-    Assert.assertEquals("AD001", dao.getUsers().get(0).getUserId());
-    Assert.assertEquals("Ranjith", dao.getUsers().get(0).getFirstname());
+    User user1 = dao.getUsers().get(0);
+    System.out.println(user1.toString());
+    Assert.assertEquals("AD001", user1.getUserId());
+    Assert.assertEquals("Ranjith", user1.getFirstname());
   }
 
 }

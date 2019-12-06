@@ -1,31 +1,32 @@
 package jbr.springjdbc.jdbctemplate;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import jbr.springdb.jdbctemplate.JdbcTemplateQuery;
+import jbr.springdb.model.User;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:config/jdbc-template-beans.xml" })
 public class JdbcTemplateQueryTest {
-  JdbcTemplateQuery query;
-  ApplicationContext ctx;
 
-  @Before
-  public void setUp() throws Exception {
-    ctx = new ClassPathXmlApplicationContext("config/jdbc-template-beans.xml");
-    query = (JdbcTemplateQuery) ctx.getBean("jdbcTemplateQuery");
-  }
+  @Autowired
+  private JdbcTemplateQuery query;
 
   @Test
   public void queryWithBeanPropertyRowMapper() {
-    Assert.assertEquals("STU001", query.queryWithBeanPropertyRowMapper().get(1).getUserId());
-    Assert.assertEquals("Manoj", query.queryWithBeanPropertyRowMapper().get(1).getFirstname());
+    User user1=query.queryWithBeanPropertyRowMapper().get(1);
+    System.out.println(user1.toString());
+    Assert.assertEquals("STU001", user1.getUserId());
+    Assert.assertEquals("Manoj", user1.getFirstname());
   }
 
   @Test
-  public void test() {
+  public void testPreparedStmtCreator() {
     Assert.assertEquals("Ranjith", query.queryPreparedStatementCreator("Ranjith").getFirstname());
   }
 
