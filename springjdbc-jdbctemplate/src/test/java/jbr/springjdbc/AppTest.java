@@ -1,4 +1,4 @@
-package jbr;
+package jbr.springjdbc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
