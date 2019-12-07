@@ -6,39 +6,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.sql.DataSource;
-
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import jbr.springjdbc.model.Book;
 
-public class BookDaoImpl implements BookDao {
+@Repository
+public class NamedParameterJdbcTemplateDaoImpl implements NamedParameterJdbcTemplateDao {
 
   private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-  public void setDataSource(DataSource dataSource) {
-    this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+  public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+    this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
   }
 
-  @Override
-  public void addBook(Book book) {
+  public int addUsingUpdate(Book book) {
     Map<String, Object> paramMap = new HashMap<>();
     paramMap.put("id", book.getId());
     paramMap.put("title", book.getTitle());
     paramMap.put("author", book.getAuthor());
     paramMap.put("price", book.getPrice());
 
-    namedParameterJdbcTemplate.update("INSERT INTO books VALUES(:id,:title,:author,:price)", paramMap);
+    return namedParameterJdbcTemplate.update("INSERT INTO books VALUES(:id,:title,:author,:price)", paramMap);
   }
 
-  @Override
-  public List<Book> getAllBooks() {
-    return null;
-  }
-
-  @Override
-  public List<Book> getBookById(int id) {
+  public List<Book> getByIdUsingQuery(int id) {
     String query = "SELECT * FROM books WHERE id=:id";
     Map<String, Object> paramMap = new HashMap<>();
     paramMap.put("id", id);

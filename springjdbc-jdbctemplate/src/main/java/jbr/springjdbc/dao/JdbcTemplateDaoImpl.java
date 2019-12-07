@@ -15,10 +15,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.stereotype.Repository;
 
 import jbr.springjdbc.model.User;
 
-public class UserDaoImpl implements UserDao {
+@Repository
+public class JdbcTemplateDaoImpl implements JdbcTemplateDao {
 
   private JdbcTemplate jdbcTemplate;
 
@@ -27,11 +29,32 @@ public class UserDaoImpl implements UserDao {
   }
 
   @Override
-  public void register(User user) {
-    String query = "INSERT INTO users VALUES (?,?,?,?,?,?,?,?)";
+  public int addUsingUpdate(User user) {
+    String query = "INSERT INTO users VALUES (?,?,?,?,?,?,?,?,?)";
 
-    jdbcTemplate.update(query, new Object[] { user.getName(), user.getAddress(), user.getEmail(), user.getPhone(),
-        user.getUsername(), user.getPassword(), user.getCity(), user.getCountry() });
+    return jdbcTemplate.update(query, new Object[] { user.getId(), user.getName(), user.getAddress(), user.getEmail(),
+        user.getPhone(), user.getCity(), user.getCountry(), user.getUsername(), user.getPassword() });
+  }
+
+  @Override
+  public int addUsingUpdatePrepStmtSetter(User user) {
+    String query = "INSERT INTO users VALUES (?,?,?,?,?,?,?,?,?)";
+
+    return jdbcTemplate.update(query, new PreparedStatementSetter() {
+
+      @Override
+      public void setValues(PreparedStatement ps) throws SQLException {
+        ps.setInt(1, user.getId());
+        ps.setString(2, user.getName());
+        ps.setString(3, user.getAddress());
+        ps.setString(4, user.getEmail());
+        ps.setString(5, user.getPhone());
+        ps.setString(6, user.getCity());
+        ps.setString(7, user.getCountry());
+        ps.setString(8, user.getUsername());
+        ps.setString(9, user.getPassword());
+      }
+    });
   }
 
   @Override
@@ -54,7 +77,7 @@ public class UserDaoImpl implements UserDao {
   }
 
   @Override
-  public void modify(String name, String email) {
+  public void updateUser(String name, String email) {
     String query = "UPDATE users SET email = ? WHERE name = ?";
 
     Object[] params = { email, name };
@@ -87,7 +110,7 @@ public class UserDaoImpl implements UserDao {
   }
 
   @Override
-  public void delete(String name) {
+  public void deleteUser(String name) {
     String query = "DELETE FROM users WHERE name=?";
     jdbcTemplate.update(query, name);
   }

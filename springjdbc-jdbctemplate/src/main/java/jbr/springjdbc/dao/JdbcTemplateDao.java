@@ -4,15 +4,17 @@ import java.util.List;
 
 import jbr.springjdbc.model.User;
 
-public interface UserDao {
+public interface JdbcTemplateDao {
 
-  void register(User user);
+  int addUsingUpdate(User user);
+
+  int addUsingUpdatePrepStmtSetter(User user);
 
   List<User> getAllUsers();
 
-  void modify(String name, String email);
+  void updateUser(String name, String email);
 
-  void delete(String name);
+  void deleteUser(String name);
 
   User getUserByName(String name);
 
@@ -21,6 +23,6 @@ public interface UserDao {
   User getUsersByPhone(String phone);
 
   List<User> getUsersByCity(String city);
-  
+
   List<User> getUsersByCountry(String country);
 }

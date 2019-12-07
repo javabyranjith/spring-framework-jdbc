@@ -2,15 +2,16 @@ SELECT * FROM users;
 
 DROP TABLE users;
 
-CREATE TABLE users ( 
+CREATE TABLE users (
+	id INTEGER(10) NOT NULL UNIQUE,
 	name VARCHAR(30) NOT NULL,
 	address VARCHAR(30) NOT NULL,
 	email VARCHAR(30),
 	phone VARCHAR(15),
-	username VARCHAR(30) NOT NULL,
-	password VARCHAR(30) NOT NULL,
 	city VARCHAR(30) NOT NULL,
-	country VARCHAR(30) NOT NULL
+	country VARCHAR(30) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+	password VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE books ( 

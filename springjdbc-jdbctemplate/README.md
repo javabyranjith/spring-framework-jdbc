@@ -1,6 +1,7 @@
 ## TOOLS & TECHNOLOGIES
 1. Java 1.8
-2. Derby DB
-
+2. MySQL DB
+		
 ## TOPICS COVERED
-1. NamedParameterJdbcTemplate
+1. JdbcTemplate
+2. NamedParameterJdbcTemplate
