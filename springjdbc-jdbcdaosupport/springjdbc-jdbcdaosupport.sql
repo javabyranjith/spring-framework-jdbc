@@ -1,8 +1,0 @@
-DROP TABLE products;
-CREATE TABLE products ( 
-id VARCHAR(30) NOT NULL,
-name VARCHAR(30) NOT NULL,
-category VARCHAR(20) NOT NULL,
-price INTEGER,
-quantity INTEGER
-);
