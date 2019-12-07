@@ -1,8 +1,8 @@
-package jbr.springjdbc.crud.dao;
+package jbr.springjdbc.derby.crud.dao;
 
 import java.util.List;
 
-import jbr.springjdbc.crud.model.User;
+import jbr.springjdbc.derby.crud.model.User;
 
 public interface UserDao {
 

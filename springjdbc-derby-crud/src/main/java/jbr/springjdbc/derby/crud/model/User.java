@@ -1,4 +1,4 @@
-package jbr.springjdbc.crud.model;
+package jbr.springjdbc.derby.crud.model;
 
 public class User {
 

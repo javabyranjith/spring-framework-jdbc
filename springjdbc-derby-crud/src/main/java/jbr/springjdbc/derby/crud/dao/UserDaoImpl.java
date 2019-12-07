@@ -1,4 +1,4 @@
-package jbr.springjdbc.crud.dao;
+package jbr.springjdbc.derby.crud.dao;
 
 import java.sql.Types;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import jbr.springjdbc.crud.model.User;
+import jbr.springjdbc.derby.crud.model.User;
 
 public class UserDaoImpl implements UserDao {
 

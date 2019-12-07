@@ -1,12 +1,12 @@
-package jbr.springjdbc.crud;
+package jbr.springjdbc.derby.crud;
 
 import java.util.List;
 
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import jbr.springjdbc.crud.dao.UserDao;
-import jbr.springjdbc.crud.model.User;
+import jbr.springjdbc.derby.crud.dao.UserDao;
+import jbr.springjdbc.derby.crud.model.User;
 
 public class UserController {
   public UserDao userDao;
