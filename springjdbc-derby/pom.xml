@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>jbr.springjdbc</groupId>
-	<artifactId>springjdbc-derby-examples</artifactId>
+	<artifactId>springjdbc-derby</artifactId>
 	<version>0.1</version>
 	<packaging>jar</packaging>
 
@@ -60,6 +60,5 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 	</dependencies>
 </project>
