@@ -1,0 +1,10 @@
+.settings/
+target/
+bin/
+build/
+.sts4-cache
+
+.project
+.classpath
+.factorypath
+*.log
