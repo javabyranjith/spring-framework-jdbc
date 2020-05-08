@@ -1,4 +1,4 @@
-package jbr.springdb.jdbctemplate;
+package jbr.springjdbc.jdbctemplate;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +15,7 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
-import jbr.springdb.model.User;
+import jbr.springjdbc.model.User;
 
 public class JdbcTemplateQuery {
 

@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS spring_jdbc;
-USE spring_jdbc;
-DROP TABLE IF EXISTS `spring_jdbc`.`users`;
-CREATE TABLE `spring_jdbc`.`users` (
+CREATE DATABASE IF NOT EXISTS springjdbc;
+USE springjdbc;
+DROP TABLE IF EXISTS `springjdbc`.`users`;
+CREATE TABLE `springjdbc`.`users` (
   `user_id` VARCHAR(45) NOT NULL,
   `user_type` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NOT NULL,

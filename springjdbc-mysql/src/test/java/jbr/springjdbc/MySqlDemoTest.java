@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import jbr.springdb.dao.NonJdbcTemplateDao;
-import jbr.springdb.model.User;
+import jbr.springjdbc.dao.NonJdbcTemplateDao;
+import jbr.springjdbc.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring-db-beans.xml" })

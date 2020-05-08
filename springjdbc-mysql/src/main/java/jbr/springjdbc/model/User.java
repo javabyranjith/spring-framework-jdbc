@@ -1,4 +1,4 @@
-package jbr.springdb.model;
+package jbr.springjdbc.model;
 
 import lombok.Getter;
 import lombok.Setter;

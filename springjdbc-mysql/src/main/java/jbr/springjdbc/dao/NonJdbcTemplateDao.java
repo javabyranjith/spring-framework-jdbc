@@ -1,4 +1,4 @@
-package jbr.springdb.dao;
+package jbr.springjdbc.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import jbr.springdb.model.User;
+import jbr.springjdbc.model.User;
 
 public class NonJdbcTemplateDao {
 

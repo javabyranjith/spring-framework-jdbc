@@ -1,4 +1,4 @@
-package jbr.springdb.jdbcdaosupport;
+package jbr.springjdbc.jdbcdaosupport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-import jbr.springdb.model.User;
+import jbr.springjdbc.model.User;
 
 public class JdbcDaoSupportDao extends JdbcDaoSupport {
 

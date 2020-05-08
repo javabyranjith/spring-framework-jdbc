@@ -1,4 +1,4 @@
-package jbr.springdb.jdbctemplate;
+package jbr.springjdbc.jdbctemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import jbr.springdb.model.User;
+import jbr.springjdbc.model.User;
 
-public class JdbcTemplateQueryForList {
+public class JdbcTemplateDao {
 
   private DataSource datasource;
   private JdbcTemplate jdbcTemplate;
@@ -20,7 +20,13 @@ public class JdbcTemplateQueryForList {
     this.datasource = datasource;
   }
 
-  public List<User> queryForListSql() {
+  public List<User> getAllUsers() {
+    jdbcTemplate = new JdbcTemplate(datasource);
+    List<User> results = jdbcTemplate.query("select * from users", new BeanPropertyRowMapper(User.class));
+    return results;
+  }
+
+  public List<User> getUsers1() {
     List<User> users = new ArrayList<User>();
     jdbcTemplate = new JdbcTemplate(datasource);
 

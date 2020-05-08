@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import jbr.springdb.jdbctemplate.JdbcTemplateQuery;
-import jbr.springdb.model.User;
+import jbr.springjdbc.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/jdbc-template-beans.xml" })

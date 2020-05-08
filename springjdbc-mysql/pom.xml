@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>jbr.springjdbc</groupId>
-  <artifactId>spring-jdbc-mysql</artifactId>
+  <artifactId>springjdbc-mysql</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-jdbc-mysql</name>
+  <name>springjdbc-mysql</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -72,9 +72,16 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.connector.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.10</version>
+    </dependency>
+
   </dependencies>
   <build>
-    <finalName>spring-jdbc-mysql</finalName>
+    <finalName>springjdbc-mysql</finalName>
     <sourceDirectory>src/main/java</sourceDirectory>
     <plugins>
       <plugin>
