@@ -16,7 +16,7 @@
 		<junit.version>4.12</junit.version>
 		<derby.version>10.12.1.1</derby.version>
 		<hsql.version>2.3.2</hsql.version>
-		<h2db.version>1.4.190</h2db.version>
+		<h2db.version>2.1.210</h2db.version>
 	</properties>
 
 	<dependencies>
